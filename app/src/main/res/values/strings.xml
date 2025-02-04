@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Super1</string>
+    <string name="username_hint">Nome do usuário</string>
+    <string name="email_hint">Insira seu email</string>
+    <string name="password_hint">Senha</string>
+    <string name="create_account_button">Criar Conta</string>
+</resources>
