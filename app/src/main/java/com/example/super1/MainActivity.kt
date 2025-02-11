@@ -1,6 +1,8 @@
 package com.example.super1
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -14,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -30,9 +33,19 @@ class MainActivity : AppCompatActivity() {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
 
+            // Verificação dos campos
             if (username.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
-                // Aqui você pode adicionar a lógica para criar a conta, como salvar no banco de dados
-                Toast.makeText(this, "Conta criada com sucesso!", Toast.LENGTH_SHORT).show()
+                // Verificação do formato do email
+                if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    // Lógica para criar a conta (salvar no banco, etc.)
+                    Toast.makeText(this, "Conta criada com sucesso!", Toast.LENGTH_SHORT).show()
+
+                    // Navegar para a tela de mapa
+                    val intent = Intent(this, MapaActivity2::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Por favor, insira um email válido", Toast.LENGTH_SHORT).show()
+                }
             } else {
                 Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show()
             }
