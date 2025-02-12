@@ -67,7 +67,6 @@ import com.google.android.gms.maps.model.LatLngBounds*/
         mapView.onDestroy()
     }
 }*/
-
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
