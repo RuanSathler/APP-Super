@@ -28,6 +28,7 @@ class SignInActivity : AppCompatActivity() {
         val emailEditText = findViewById<EditText>(R.id.editTextEmail)
         val passwordEditText = findViewById<EditText>(R.id.editTextPassword)
         val signInButton = findViewById<Button>(R.id.buttonSignIn)
+        val signInWithGoogleButton = findViewById<Button>(R.id.buttonSignInWithGoogle)
         val createAccountButton = findViewById<Button>(R.id.buttonCreateAccount)
 
         signInButton.setOnClickListener {
@@ -54,9 +55,27 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        signInWithGoogleButton.setOnClickListener {
+            Toast.makeText(this, "Sign in with Google", Toast.LENGTH_SHORT).show()
+        }
+
         createAccountButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+
+        // Verificar se o usuário já está logado
+        val sharedPreferences = getSharedPreferences("super1", MODE_PRIVATE)
+        val email = sharedPreferences.getString("email", null)
+        val password = sharedPreferences.getString("password", null)
+        if (email != null && password != null) {
+            val db = Database(this)
+            val userExists = db.getUser(email, password)
+            db.close()
+            if (userExists) {
+                val intent = Intent(this, MapaActivity2::class.java)
+                startActivity(intent)
+            }
         }
     }
 }
