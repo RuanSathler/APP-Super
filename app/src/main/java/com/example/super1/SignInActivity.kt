@@ -28,6 +28,7 @@ class SignInActivity : AppCompatActivity() {
         val emailEditText = findViewById<EditText>(R.id.editTextEmail)
         val passwordEditText = findViewById<EditText>(R.id.editTextPassword)
         val signInButton = findViewById<Button>(R.id.buttonSignIn)
+        val createAccountButton = findViewById<Button>(R.id.buttonCreateAccount)
 
         signInButton.setOnClickListener {
             val email = emailEditText.text.toString()
@@ -50,6 +51,11 @@ class SignInActivity : AppCompatActivity() {
 
             // Navegar para a tela de mapa
             val intent = Intent(this, MapaActivity2::class.java)
+            startActivity(intent)
+        }
+
+        createAccountButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }
