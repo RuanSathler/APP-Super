@@ -12,9 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Super1"
         tools:targetApi="31">
-        <activity
-            android:name=".MapaActivity2"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".MapaActivity2"-->
+<!--            android:exported="false" />-->
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -26,19 +26,28 @@
              project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
              "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
         -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDq6bTgUB7T8loCh2-_0D_U7MXm6OKk2_4" />
+<!--        <meta-data-->
+<!--            android:name="com.google.android.geo.API_KEY"-->
+<!--            android:value="AIzaSyDq6bTgUB7T8loCh2-_0D_U7MXm6OKk2_4" />-->
 
-        <activity
-            android:name=".MainActivity"
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
+        <activity android:name=".SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CreateAccountActivity" />
     </application>
 
 </manifest>

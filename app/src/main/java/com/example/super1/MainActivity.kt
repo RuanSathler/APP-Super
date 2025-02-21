@@ -23,9 +23,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val usernameEditText = findViewById<EditText>(R.id.editUserName)
+        val usernameEditText = findViewById<EditText>(R.id.editTextUserName)
         val emailEditText = findViewById<EditText>(R.id.editNewEmail)
-        val passwordEditText = findViewById<EditText>(R.id.editNewPassword)
+        val passwordEditText = findViewById<EditText>(R.id.editTextNewPassword)
         val createAccountButton = findViewById<Button>(R.id.button)
 
         createAccountButton.setOnClickListener {
