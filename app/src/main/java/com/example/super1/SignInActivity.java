@@ -24,6 +24,14 @@ public class SignInActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // botao entrar
+        findViewById(R.id.buttonSignIn).setOnClickListener(v -> {
+            Intent intent = new Intent(SignInActivity.this, MapActivity.class);
+            startActivity(intent);
+            onPause();
+            Toast.makeText(SignInActivity.this, "Bem-vindo(a)", Toast.LENGTH_SHORT).show();
+        });
     }
 
     @Override
@@ -36,45 +44,49 @@ public class SignInActivity extends AppCompatActivity {
         super.onResume();
     }
 
-    public void signInClicked(View view) {
-        EditText editTextEmail = findViewById(R.id.editTextEmail);
-        EditText editTextPassword = findViewById(R.id.editTextPassword);
-
-        String email = editTextEmail.getText().toString();
-        String password = editTextPassword.getText().toString();
-
-        if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        boolean userExists = false;
-        try {
-            Database db = new Database(this);
-            userExists = db.getUser(email, password);
-            db.close();
-        } catch (Exception e) {
-            // Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-
-        if (userExists) {
-            // ir para a tela principal (mapa)
-            Toast.makeText(this, "Usuario logado", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Email ou senha incorretos", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void signInWithGoogleClicked(View view) {
-        // firebase
-        Toast.makeText(this, "Entrar com Google clicado", Toast.LENGTH_SHORT).show();
-    }
-
-    public void createAccountClicked(View view) {
-//        Toast.makeText(this, "Criar conta clicado", Toast.LENGTH_SHORT).show();
-        // go to create account activity
-        Intent intent = new Intent(this, CreateAccountActivity.class);
-        startActivity(intent);
+//    public void entrarClicado(View view) {
+//        Intent intent = new Intent(this, MapActivity.class);
+//        startActivity(intent);
 //        onPause();
-    }
+//        Toast.makeText(this, "Bem-vindo(a)", Toast.LENGTH_SHORT).show();
+//        EditText editTextEmail = findViewById(R.id.editTextEmail);
+//        EditText editTextPassword = findViewById(R.id.editTextPassword);
+//
+//        String email = editTextEmail.getText().toString();
+//        String password = editTextPassword.getText().toString();
+//
+//        if (email.isEmpty() || password.isEmpty()) {
+//            Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+//
+//        boolean userExists = false;
+//        try {
+//            Database db = new Database(this);
+//            userExists = db.getUser(email, password);
+//            db.close();
+//        } catch (Exception e) {
+//            // Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+//        }
+//
+//        if (userExists) {
+//            // ir para a tela principal (mapa)
+//            Toast.makeText(this, "Usuario logado", Toast.LENGTH_SHORT).show();
+//        } else {
+//            Toast.makeText(this, "Email ou senha incorretos", Toast.LENGTH_SHORT).show();
+//        }
+//    }
+
+//    public void signInWithGoogleClicked(View view) {
+//        // firebase
+//        Toast.makeText(this, "Entrar com Google clicado", Toast.LENGTH_SHORT).show();
+//    }
+//
+//    public void createAccountClicked(View view) {
+////        Toast.makeText(this, "Criar conta clicado", Toast.LENGTH_SHORT).show();
+//        // go to create account activity
+//        Intent intent = new Intent(this, CreateAccountActivity.class);
+//        startActivity(intent);
+////        onPause();
+//    }
 }

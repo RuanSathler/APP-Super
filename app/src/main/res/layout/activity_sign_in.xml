@@ -7,85 +7,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="350dp"
-        android:layout_height="55dp"
-        android:ems="10"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/custom_ic_email"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:drawablePadding="15dp"
-        android:hint="e-mail"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <EditText-->
+<!--        android:id="@+id/editTextEmail"-->
+<!--        android:layout_width="350dp"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:ems="10"-->
+<!--        android:background="@drawable/custom_input"-->
+<!--        android:drawableStart="@drawable/custom_ic_email"-->
+<!--        android:paddingStart="15dp"-->
+<!--        android:paddingEnd="15dp"-->
+<!--        android:drawablePadding="15dp"-->
+<!--        android:hint="e-mail"-->
+<!--        android:inputType="textEmailAddress"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="350dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/custom_ic_key"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:drawablePadding="15dp"
-        android:hint="senha"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+<!--    <EditText-->
+<!--        android:id="@+id/editTextPassword"-->
+<!--        android:layout_width="350dp"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:ems="10"-->
+<!--        android:background="@drawable/custom_input"-->
+<!--        android:drawableStart="@drawable/custom_ic_key"-->
+<!--        android:paddingStart="15dp"-->
+<!--        android:paddingEnd="15dp"-->
+<!--        android:drawablePadding="15dp"-->
+<!--        android:hint="senha"-->
+<!--        android:inputType="textPassword"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />-->
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_recycle" />
 
     <Button
         android:id="@+id/buttonSignIn"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_width="239dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="728dp"
         android:backgroundTint="#208716"
-        android:onClick="signInClicked"
         android:text="ENTRAR"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonSignInWithGoogle"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#208716"
-        android:drawableStart="@drawable/ic_key"
-        android:text="ENTRAR COM GOOGLE"
-        android:onClick="signInWithGoogleClicked"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="217dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="32dp"
+        android:text='"Por uma Manaus mais sustentável"'
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSignIn" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <Button
-        android:id="@+id/buttonCreateAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
-        android:text="Criar conta"
-        android:onClick="createAccountClicked"
-        android:textColor="#208716"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSignInWithGoogle" />
+    <!--    <Button-->
+<!--        android:id="@+id/buttonSignInWithGoogle"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="#208716"-->
+<!--        android:drawableStart="@drawable/ic_key"-->
+<!--        android:text="ENTRAR COM GOOGLE"-->
+<!--        android:onClick="signInWithGoogleClicked"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/buttonSignIn" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonCreateAccount"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="#FFFFFF"-->
+<!--        android:text="Criar conta"-->
+<!--        android:onClick="createAccountClicked"-->
+<!--        android:textColor="#208716"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/buttonSignInWithGoogle" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
